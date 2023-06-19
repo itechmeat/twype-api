@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
 const bodyParser = require('body-parser')
-require('dotenv').config()
+require('dotenv-flow').config()
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 
 app.use('/health', require('express-healthcheck')({
   healthy: function () {
-      return { message: 'ExpressJS web service is up and running' };
+    return { message: 'ExpressJS web service is up and running' };
   }
 }));
 
